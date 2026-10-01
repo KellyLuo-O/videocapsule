@@ -1,0 +1,29 @@
+
+#include "altera_avalon_pio_regs.h"
+#include "system.h"
+#include <stdio.h>
+#include <unistd.h>
+#include <io.h>
+
+int main()
+{
+  printf("Hello from Nios II!\n");
+  char r_value;
+  char g_value;
+  char b_value;
+
+  while(1)
+  {
+	  IOWR(COLORIMETRIE_0_BASE, 0, 0);
+
+	  // On lit mtn les valeurs
+	  r_value = IORD(COLORIMETRIE_0_BASE, 0x1);
+	  g_value = IORD(COLORIMETRIE_0_BASE, 0x2);
+	  b_value = IORD(COLORIMETRIE_0_BASE, 0x3);
+
+	  printf("valeur rgb %d %d %d \n", r_value, g_value, b_value);
+
+	  usleep(500000);
+  }
+  return 0;
+}

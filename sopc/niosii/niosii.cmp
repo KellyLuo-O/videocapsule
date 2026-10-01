@@ -1,0 +1,16 @@
+	component niosii is
+		port (
+			clk_clk                                     : in  std_logic                     := 'X';             -- clk
+			colorimetrie_0_inputs_outputs_clk_pixel     : in  std_logic                     := 'X';             -- clk_pixel
+			colorimetrie_0_inputs_outputs_synchro_trame : in  std_logic                     := 'X';             -- synchro_trame
+			colorimetrie_0_inputs_outputs_b             : in  std_logic_vector(7 downto 0)  := (others => 'X'); -- b
+			colorimetrie_0_inputs_outputs_g             : in  std_logic_vector(7 downto 0)  := (others => 'X'); -- g
+			colorimetrie_0_inputs_outputs_r             : in  std_logic_vector(7 downto 0)  := (others => 'X'); -- r
+			colorimetrie_0_inputs_outputs_pixel_address : out std_logic_vector(18 downto 0);                    -- pixel_address
+			colorimetrie_0_inputs_outputs_pixel_value   : out std_logic_vector(8 downto 0);                     -- pixel_value
+			colorimetrie_0_inputs_outputs_ram_we        : out std_logic;                                        -- ram_we
+			pio_0_external_connection_export            : out std_logic_vector(7 downto 0);                     -- export
+			reset_reset_n                               : in  std_logic                     := 'X'              -- reset_n
+		);
+	end component niosii;
+

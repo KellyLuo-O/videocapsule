@@ -1,0 +1,94 @@
+m255
+K4
+z2
+!s11e MIXED_VERSIONS
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/Users/Kelly/akelly/enSEA/3A/masTER/uec13/videocapsule/sim
+Ecolorimetrie
+Z0 w1769589057
+Z1 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 42
+Z4 dC:/Users/Kelly/akelly/enSEA/3A/masTER/uec13_videocapsule/videocapsule/sim
+Z5 8../colorimetrie.vhd
+Z6 F../colorimetrie.vhd
+l0
+L5 1
+VJRCISM@m<dfO@idFGYKzJ3
+!s100 b<Q?ha:=eDZ8_3cDzcS>i2
+Z7 OV;C;2020.1;71
+32
+Z8 !s110 1769589062
+!i10b 1
+Z9 !s108 1769589062.000000
+Z10 !s90 -reportprogress|300|../colorimetrie.vhd|
+Z11 !s107 ../colorimetrie.vhd|
+!i113 1
+Z12 tExplicit 1 CvgOpt 0
+Aarch
+R1
+R2
+R3
+Z13 DEx4 work 12 colorimetrie 0 22 JRCISM@m<dfO@idFGYKzJ3
+!i122 42
+l39
+L27 83
+VkHP2bW3FPZm6Qf`h=M9Yf0
+!s100 9oo5TU2k?^zDUHzzWzMFg2
+R7
+32
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+Ecolorimetrie_tb
+Z14 w1769587096
+R1
+R2
+R3
+!i122 43
+R4
+Z15 8colorimetrie_tb.vhd
+Z16 Fcolorimetrie_tb.vhd
+l0
+L5 1
+V]PF@C>_dYa<eK^[W1g35C2
+!s100 H5o5VLkn]c;TDTAZcLi;X0
+R7
+32
+R8
+!i10b 1
+R9
+Z17 !s90 -reportprogress|300|colorimetrie_tb.vhd|
+Z18 !s107 colorimetrie_tb.vhd|
+!i113 1
+R12
+Atb
+R13
+R1
+R2
+R3
+Z19 DEx4 work 15 colorimetrie_tb 0 22 ]PF@C>_dYa<eK^[W1g35C2
+!i122 43
+l27
+Z20 L9 103
+Z21 V1SM90>RiOR8co_=2o8J9K3
+Z22 !s100 KQRelfk6[j1HcB57hQnHR2
+R7
+32
+R8
+!i10b 1
+R9
+R17
+R18
+!i113 1
+R12

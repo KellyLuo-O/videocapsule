@@ -1,0 +1,80 @@
+#include <stdio.h>
+#include <stdint.h>
+#include <unistd.h>
+#include <io.h>
+
+#include "system.h"
+#include "display.h"
+
+
+
+
+int main()
+{
+  printf("Hello from Nios II!\n");
+
+  uint8_t r_value;
+  uint8_t g_value;
+  int indice_rg;
+
+  int courbe_rg[FIN_AXE_X];
+  int courbe_index = DEBUT_AXE_X;
+
+
+  display_clean();
+  display_repere();
+
+  while(1)
+  {
+	  r_value = IORD(COLORIMETRIE_0_BASE, 0x1);
+	  g_value = IORD(COLORIMETRIE_0_BASE, 0x2);
+
+	  // printf("valeur rgb %d %d %d \n", r_value, g_value, b_value);
+
+	  if (g_value != 0)
+	  {
+		  indice_rg = r_value / g_value;
+		  // printf("indice rg : %d\n", indice_rg);
+
+		  // on efface l'ancienne valeur
+		  display_pixel(courbe_index, courbe_rg[courbe_index], WHITE);
+
+
+		  // on néttoie la valeur précédente
+		  if (courbe_index > 0)
+		  {
+			  display_pixel(courbe_index-1, courbe_rg[courbe_index-1], RED);
+			  display_pixel(courbe_index-1, courbe_rg[courbe_index-1]+1, WHITE);
+			  display_pixel(courbe_index-1, courbe_rg[courbe_index-1]-1, WHITE);
+		  }
+		  else if (courbe_index == DEBUT_AXE_X)
+		  {
+			  printf("oui !!!");
+			  display_pixel(FIN_AXE_X+1, courbe_rg[FIN_AXE_X+1], GREEN);
+			  display_pixel(FIN_AXE_X+1, courbe_rg[FIN_AXE_X+1]+1, GREEN);
+			  display_pixel(FIN_AXE_X+1, courbe_rg[FIN_AXE_X+1]-1, GREEN);
+		  }
+
+
+		  // on garde la nouvelle valeur et l'affiche le nouveau point en bleu
+		  courbe_rg[courbe_index] = ORIGIN_AXE_Y - 10*indice_rg;
+		  display_pixel(courbe_index, courbe_rg[courbe_index], BLUE);
+		  display_pixel(courbe_index, courbe_rg[courbe_index]+1, BLUE);
+		  display_pixel(courbe_index, courbe_rg[courbe_index]-1, BLUE);
+
+		  if (courbe_index >= FIN_AXE_X)
+		  {
+			  courbe_index = DEBUT_AXE_X;
+			  printf("ouiii please %d", courbe_index);
+		  }
+
+		  else
+			  courbe_index++;
+	  }
+
+	  usleep(5000);
+  }
+
+
+  return 0;
+}

@@ -1,0 +1,40 @@
+
+#include "system.h"
+#include <stdio.h>
+#include <unistd.h>
+#include <io.h>
+
+
+#define READ_R 0x1
+#define READ_G 0x2
+#define READ_B 0x3
+
+#define WRITE_RGB 0x0
+#define WRITE_PIXEL_ADDR 0x1
+#define WRITE_PIXEL_VALUE 0x2
+#define WRITE_RAM_WE 0x3
+
+
+#define PIXEL_ADDR_MAX 307199
+
+// COLORIMETRIE_0_BASE
+
+int main()
+{
+  printf("Hello from Nios II!\n");
+
+  IOWR(COLORIMETRIE_0_BASE, WRITE_RGB, 0);
+
+  IOWR(COLORIMETRIE_0_BASE, WRITE_RAM_WE, 0);
+
+  int i;
+
+  for (i = 0; i < PIXEL_ADDR_MAX; i++ )
+  {
+	    IOWR(COLORIMETRIE_0_BASE, WRITE_PIXEL_ADDR, i);
+	    IOWR(COLORIMETRIE_0_BASE, WRITE_PIXEL_VALUE, 0x7);
+	    usleep(200);
+  }
+
+  return 0;
+}

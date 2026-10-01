@@ -1,0 +1,22 @@
+{
+	"system" : {
+		"platform" : "windows64",
+		"os_name" : "Windows 7",
+		"os_version" : "6.2"
+	},
+	"error" : {
+		"executable" : "quartus",
+		"comment" : "none",
+		"error_message" : "\n",
+		"source_file" : "/quartus/ccl/fio/fio_path.cpp",
+		"line" : "82",
+		"stack_trace" : "\t0x7ffce10b457d: CCL_ERR + 0x457d (?err_report_internal_error@@YAXPEBD00H@Z + 0x2d)\n\t0x7ffce1aed85a: CCL_FIO + 0xd85a (?fio_clsid_to_str@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$MEM_STL_ALLOCATOR@D@@@std@@AEBU_GUID@@W4FIO_CLSID_FORMAT@@@Z + 0x1aa)\n\t0x7ffce1af0194: CCL_FIO + 0x10194 (?fullpath@FIO_PATH@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$MEM_STL_ALLOCATOR@D@@@std@@XZ + 0x34)\n\t0x7ffcc855b506: pgm_pgme + 0x3b506 (?engage_ocpp_mode@PGME_PROGRAMMER@@QEAA_NPEAV?$vector@PEAVPGM_CHAIN_ELEMENT@@V?$MEM_STL_ALLOCATOR@PEAVPGM_CHAIN_ELEMENT@@@@@std@@@Z + 0x8e6)\n\t 0x6c6a6e57: QtCore4 + 0x36e57 (?start@QThread@@QEAAXW4Priority@1@@Z + 0x427)\n\t0x7ffce1754f7e: MSVCR120 + 0x24f7e (_beginthreadex + 0x106)\n\t0x7ffce1755125: MSVCR120 + 0x25125 (_endthreadex + 0x191)\n\t0x7ffd5c27e8d6: KERNEL32 + 0x2e8d6 (BaseThreadInitThunk + 0x16)\n\t0x7ffd5d70c53b: ntdll + 0x8c53b (RtlUserThreadStart + 0x2b)\n",
+		"subsystem" : "FIO"
+	},
+	"quartus" : {
+		"quartus_bits" : "64",
+		"version" : "15.0.0",
+		"build" : "145",
+		"edition" : "Web Edition"
+	}
+}

@@ -1,0 +1,138 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 1991-2015 Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus II License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+*/
+(header "symbol" (version "1.1"))
+(symbol
+	(rect 0 0 640 336)
+	(text "niosii" (rect 306 -1 323 11)(font "Arial" (font_size 10)))
+	(text "inst" (rect 8 320 20 332)(font "Arial" ))
+	(port
+		(pt 0 72)
+		(input)
+		(text "clk_clk" (rect 0 0 27 12)(font "Arial" (font_size 8)))
+		(text "clk_clk" (rect 4 61 46 72)(font "Arial" (font_size 8)))
+		(line (pt 0 72)(pt 272 72)(line_width 1))
+	)
+	(port
+		(pt 0 112)
+		(input)
+		(text "colorimetrie_0_inputs_outputs_clk_pixel" (rect 0 0 156 12)(font "Arial" (font_size 8)))
+		(text "colorimetrie_0_inputs_outputs_clk_pixel" (rect 4 101 238 112)(font "Arial" (font_size 8)))
+		(line (pt 0 112)(pt 272 112)(line_width 1))
+	)
+	(port
+		(pt 0 128)
+		(input)
+		(text "colorimetrie_0_inputs_outputs_synchro_trame" (rect 0 0 186 12)(font "Arial" (font_size 8)))
+		(text "colorimetrie_0_inputs_outputs_synchro_trame" (rect 4 117 262 128)(font "Arial" (font_size 8)))
+		(line (pt 0 128)(pt 272 128)(line_width 1))
+	)
+	(port
+		(pt 0 144)
+		(input)
+		(text "colorimetrie_0_inputs_outputs_b[7..0]" (rect 0 0 148 12)(font "Arial" (font_size 8)))
+		(text "colorimetrie_0_inputs_outputs_b[7..0]" (rect 4 133 226 144)(font "Arial" (font_size 8)))
+		(line (pt 0 144)(pt 272 144)(line_width 3))
+	)
+	(port
+		(pt 0 160)
+		(input)
+		(text "colorimetrie_0_inputs_outputs_g[7..0]" (rect 0 0 148 12)(font "Arial" (font_size 8)))
+		(text "colorimetrie_0_inputs_outputs_g[7..0]" (rect 4 149 226 160)(font "Arial" (font_size 8)))
+		(line (pt 0 160)(pt 272 160)(line_width 3))
+	)
+	(port
+		(pt 0 176)
+		(input)
+		(text "colorimetrie_0_inputs_outputs_r[7..0]" (rect 0 0 147 12)(font "Arial" (font_size 8)))
+		(text "colorimetrie_0_inputs_outputs_r[7..0]" (rect 4 165 226 176)(font "Arial" (font_size 8)))
+		(line (pt 0 176)(pt 272 176)(line_width 3))
+	)
+	(port
+		(pt 0 304)
+		(input)
+		(text "reset_reset_n" (rect 0 0 56 12)(font "Arial" (font_size 8)))
+		(text "reset_reset_n" (rect 4 293 82 304)(font "Arial" (font_size 8)))
+		(line (pt 0 304)(pt 272 304)(line_width 1))
+	)
+	(port
+		(pt 0 192)
+		(output)
+		(text "colorimetrie_0_inputs_outputs_pixel_address[18..0]" (rect 0 0 201 12)(font "Arial" (font_size 8)))
+		(text "colorimetrie_0_inputs_outputs_pixel_address[18..0]" (rect 4 181 304 192)(font "Arial" (font_size 8)))
+		(line (pt 0 192)(pt 272 192)(line_width 3))
+	)
+	(port
+		(pt 0 208)
+		(output)
+		(text "colorimetrie_0_inputs_outputs_pixel_value[8..0]" (rect 0 0 187 12)(font "Arial" (font_size 8)))
+		(text "colorimetrie_0_inputs_outputs_pixel_value[8..0]" (rect 4 197 286 208)(font "Arial" (font_size 8)))
+		(line (pt 0 208)(pt 272 208)(line_width 3))
+	)
+	(port
+		(pt 0 224)
+		(output)
+		(text "colorimetrie_0_inputs_outputs_ram_we" (rect 0 0 156 12)(font "Arial" (font_size 8)))
+		(text "colorimetrie_0_inputs_outputs_ram_we" (rect 4 213 220 224)(font "Arial" (font_size 8)))
+		(line (pt 0 224)(pt 272 224)(line_width 1))
+	)
+	(port
+		(pt 0 264)
+		(output)
+		(text "pio_0_external_connection_export[7..0]" (rect 0 0 155 12)(font "Arial" (font_size 8)))
+		(text "pio_0_external_connection_export[7..0]" (rect 4 253 232 264)(font "Arial" (font_size 8)))
+		(line (pt 0 264)(pt 272 264)(line_width 3))
+	)
+	(drawing
+		(text "clk" (rect 257 43 532 99)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "clk" (rect 277 67 572 144)(font "Arial" (color 0 0 0)))
+		(text "colorimetrie_0_inputs_outputs" (rect 96 83 366 179)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "clk_pixel" (rect 277 107 608 224)(font "Arial" (color 0 0 0)))
+		(text "synchro_trame" (rect 277 123 632 256)(font "Arial" (color 0 0 0)))
+		(text "b" (rect 277 139 560 288)(font "Arial" (color 0 0 0)))
+		(text "g" (rect 277 155 560 320)(font "Arial" (color 0 0 0)))
+		(text "r" (rect 277 171 560 352)(font "Arial" (color 0 0 0)))
+		(text "pixel_address" (rect 277 187 632 384)(font "Arial" (color 0 0 0)))
+		(text "pixel_value" (rect 277 203 620 416)(font "Arial" (color 0 0 0)))
+		(text "ram_we" (rect 277 219 590 448)(font "Arial" (color 0 0 0)))
+		(text "pio_0_external_connection" (rect 118 235 386 483)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "export" (rect 277 259 590 528)(font "Arial" (color 0 0 0)))
+		(text "reset" (rect 243 275 516 563)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "reset_n" (rect 277 299 596 608)(font "Arial" (color 0 0 0)))
+		(text " niosii " (rect 616 320 1280 650)(font "Arial" ))
+		(line (pt 272 32)(pt 368 32)(line_width 1))
+		(line (pt 368 32)(pt 368 320)(line_width 1))
+		(line (pt 272 320)(pt 368 320)(line_width 1))
+		(line (pt 272 32)(pt 272 320)(line_width 1))
+		(line (pt 273 52)(pt 273 76)(line_width 1))
+		(line (pt 274 52)(pt 274 76)(line_width 1))
+		(line (pt 273 92)(pt 273 228)(line_width 1))
+		(line (pt 274 92)(pt 274 228)(line_width 1))
+		(line (pt 273 244)(pt 273 268)(line_width 1))
+		(line (pt 274 244)(pt 274 268)(line_width 1))
+		(line (pt 273 284)(pt 273 308)(line_width 1))
+		(line (pt 274 284)(pt 274 308)(line_width 1))
+		(line (pt 0 0)(pt 640 0)(line_width 1))
+		(line (pt 640 0)(pt 640 336)(line_width 1))
+		(line (pt 0 336)(pt 640 336)(line_width 1))
+		(line (pt 0 0)(pt 0 336)(line_width 1))
+	)
+)

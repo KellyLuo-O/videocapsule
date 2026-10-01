@@ -1,0 +1,28 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity rgb_3_to_8 is
+    port (
+        pixel_9  : in  std_logic_vector(8 downto 0);  -- RRR GGG BBB
+        pixel_24 : out std_logic_vector(23 downto 0)  -- RRRRRRRR GGGGGGGG BBBBBBBB
+    );
+end entity;
+
+architecture rtl of rgb_3_to_8 is
+    signal R3 : std_logic_vector(2 downto 0);
+    signal G3 : std_logic_vector(2 downto 0);
+    signal B3 : std_logic_vector(2 downto 0);
+
+begin
+
+    -- Extraction
+    R3 <= pixel_9(8 downto 6);
+    G3 <= pixel_9(5 downto 3);
+    B3 <= pixel_9(2 downto 0);
+
+    -- Expansion 3 bits -> 8 bits (bit replication)
+    pixel_24(23 downto 16) <= R3 & R3 & R3(2 downto 1);
+    pixel_24(15 downto 8)  <= G3 & G3 & G3(2 downto 1);
+    pixel_24(7 downto 0)   <= B3 & B3 & B3(2 downto 1);
+
+end architecture;

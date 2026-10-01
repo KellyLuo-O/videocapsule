@@ -1,0 +1,69 @@
+
+#include "system.h"
+#include <stdio.h>
+#include <stdint.h>
+#include <unistd.h>
+#include <io.h>
+#include "display.h"
+
+
+
+
+int main()
+{
+  printf("Hello from Nios II!\n");
+
+  uint8_t r_value;
+  uint8_t g_value;
+  uint8_t b_value;
+  int indice_rg;
+
+  int courbe_rg[FIN_AXE_X - DEBUT_AXE_X];
+  int courbe_index = DEBUT_AXE_X;
+
+
+  affiche_clean();
+  affiche_repere();
+
+  while(1)
+  {
+	  r_value = IORD(COLORIMETRIE_0_BASE, 0x1);
+	  g_value = IORD(COLORIMETRIE_0_BASE, 0x2);
+	  b_value = IORD(COLORIMETRIE_0_BASE, 0x3);
+
+	  // printf("valeur rgb %d %d %d \n", r_value, g_value, b_value);
+
+	  if (g_value != 0)
+	  {
+		  indice_rg = r_value / g_value;
+		  // printf("indice rg : %d\n", indice_rg);
+
+		  // on efface l'ancienne valeur
+		  IOWR(COLORIMETRIE_0_BASE, WRITE_RAM_WE, 0x0);
+		  IOWR(COLORIMETRIE_0_BASE, WRITE_PIXEL_ADDR, PIXEL(courbe_index, courbe_rg[courbe_index]));
+		  IOWR(COLORIMETRIE_0_BASE, WRITE_PIXEL_VALUE, WHITE);
+		  IOWR(COLORIMETRIE_0_BASE, WRITE_RAM_WE, 0x1);
+
+		  // on garde la nouvelle valeur et l'affiche
+		  courbe_rg[courbe_index] = ORIGIN_AXE_Y - 10*indice_rg;
+		  IOWR(COLORIMETRIE_0_BASE, WRITE_RAM_WE, 0x0);
+		  IOWR(COLORIMETRIE_0_BASE, WRITE_PIXEL_VALUE, RED);
+		  IOWR(COLORIMETRIE_0_BASE, WRITE_PIXEL_ADDR, PIXEL(courbe_index, courbe_rg[courbe_index]));
+		  IOWR(COLORIMETRIE_0_BASE, WRITE_RAM_WE, 0x1);
+
+		  // printf("iciiii : %d %d\n", courbe_index, courbe_rg[courbe_index]);
+
+
+		  if (courbe_index >= FIN_AXE_X)
+			  courbe_index = DEBUT_AXE_X;
+		  else
+			  courbe_index++;
+
+	  }
+
+	  usleep(5000);
+  }
+
+
+  return 0;
+}

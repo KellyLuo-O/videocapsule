@@ -1,0 +1,9 @@
+09:23:03 **** Incremental Build of configuration Nios II for project colorimetrie ****
+make all 
+Info: Building ../colorimetrie_bsp/
+C:/altera/15.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../colorimetrie_bsp/
+[BSP build complete]
+[colorimetrie build complete]
+
+09:23:06 Build Finished (took 3s.365ms)
+

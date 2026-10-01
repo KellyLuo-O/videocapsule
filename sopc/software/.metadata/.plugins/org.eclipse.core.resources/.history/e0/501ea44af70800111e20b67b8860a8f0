@@ -1,0 +1,66 @@
+#include "system.h"
+#include <stdio.h>
+#include <stdint.h>
+#include <unistd.h>
+#include <io.h>
+
+
+#define READ_R 0x1
+#define READ_G 0x2
+#define READ_B 0x3
+
+#define WRITE_RGB 0x4
+#define WRITE_PIXEL_ADDR 0x5
+#define WRITE_PIXEL_VALUE 0x6
+#define WRITE_RAM_WE 0x7
+
+
+#define H_RES 640
+#define V_RES 480
+#define PIXEL_ADDR_MAX H_RES*V_RES
+
+#define PIXEL(x, y) ((y) * H_RES + (x))
+
+#define DEBUT_AXE_X 50
+#define FIN_AXE_X 600
+#define ORIGIN_AXE_Y 400
+
+#define COLOR(r, g, b)	(r << 6) | (g << 3) | b
+#define WHITE COLOR(7, 7, 7)
+#define BLACK COLOR(0, 0, 0)
+#define RED COLOR(7, 0, 0)
+#define GREEN COLOR(0, 7, 0)
+#define BLUE COLOR(0, 0, 7)
+
+
+
+void affiche_clean()
+{
+	int i;
+	IOWR(COLORIMETRIE_0_BASE, WRITE_PIXEL_VALUE, WHITE);
+	IOWR(COLORIMETRIE_0_BASE, WRITE_RAM_WE, 0x1);
+	for (i = 0; i < PIXEL_ADDR_MAX; i++)
+		IOWR(COLORIMETRIE_0_BASE, WRITE_PIXEL_ADDR, i);
+	IOWR(COLORIMETRIE_0_BASE, WRITE_RAM_WE, 0x0);
+}
+
+
+void affiche_repere()
+{
+	int i;
+	IOWR(COLORIMETRIE_0_BASE, WRITE_PIXEL_VALUE, BLACK);
+	IOWR(COLORIMETRIE_0_BASE, WRITE_RAM_WE, 0x1);
+	for (i = 50; i < 430; i++)
+	{
+		IOWR(COLORIMETRIE_0_BASE, WRITE_PIXEL_ADDR, PIXEL(DEBUT_AXE_X-1, i));
+		IOWR(COLORIMETRIE_0_BASE, WRITE_PIXEL_ADDR, PIXEL(DEBUT_AXE_X-2, i));
+		IOWR(COLORIMETRIE_0_BASE, WRITE_PIXEL_ADDR, PIXEL(DEBUT_AXE_X-3, i));
+	}
+	for (i = 50; i < 600; i++)
+	{
+		IOWR(COLORIMETRIE_0_BASE, WRITE_PIXEL_ADDR, PIXEL(i, ORIGIN_AXE_Y+1));
+		IOWR(COLORIMETRIE_0_BASE, WRITE_PIXEL_ADDR, PIXEL(i, ORIGIN_AXE_Y+2));
+		IOWR(COLORIMETRIE_0_BASE, WRITE_PIXEL_ADDR, PIXEL(i, ORIGIN_AXE_Y+3));
+	}
+	IOWR(COLORIMETRIE_0_BASE, WRITE_RAM_WE, 0x0);
+}
